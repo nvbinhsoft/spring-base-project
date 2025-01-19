@@ -8,3 +8,8 @@ spring:
   jpa:
     hibernate:
       ddl-auto: create-drop
+  flyway:
+    url: jdbc:h2:mem:testdb
+    user: sa
+    password: password
+    locations: classpath:db/migration
