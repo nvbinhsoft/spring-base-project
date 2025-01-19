@@ -11,3 +11,5 @@ This repository is a **base template** for a Spring Boot application, designed t
 - **Git Hook** (`pre-commit`) to run tests locally before committing
 - **Dockerfile** for building a Docker image
 - **Example unit, integration, and E2E tests** (using JUnit 5, Mockito, RestAssured)
+- **Swagger UI** for API documentation
+- **Flyway** for database migrations
