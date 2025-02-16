@@ -1,5 +1,8 @@
 package com.tech.springbaseproject.exception;
 
+import lombok.Getter;
+
+@Getter
 public class AppException extends RuntimeException {
     private final int errorCode;
 
@@ -8,7 +11,4 @@ public class AppException extends RuntimeException {
         this.errorCode = errorCode;
     }
 
-    public int getErrorCode() {
-        return errorCode;
-    }
 }
