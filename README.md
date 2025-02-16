@@ -9,7 +9,9 @@ This repository is a **base template** for a Spring Boot application, designed t
 - **Logging** with environment-specific configuration using `logback-spring.xml`
 - **GitHub Actions CI** pipeline (run unit, integration, E2E tests)
 - **Git Hook** (`pre-commit`) to run tests locally before committing
-- **Dockerfile** for building a Docker image
+- **Dockerfile** for building a Docker image (with multi-stage build)
 - **Example unit, integration, and E2E tests** (using JUnit 5, Mockito, RestAssured)
 - **Swagger UI** for API documentation
 - **Flyway** for database migrations
+- **i18n** for multiple languages
+
