@@ -1,6 +1,8 @@
 package com.tech.springbaseproject.config;
 
 import com.tech.springbaseproject.common.Version;
+import java.util.ArrayList;
+import java.util.Arrays;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.mvc.condition.PatternsRequestCondition;
