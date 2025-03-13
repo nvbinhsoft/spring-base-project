@@ -1,6 +1,4 @@
-## .github/PULL_REQUEST_TEMPLATE.md
-# Pull Request
-
+<!-- Thanks for your contribution! -->
 ## Description
 <!-- Provide a brief description of the changes introduced in this PR -->
 
