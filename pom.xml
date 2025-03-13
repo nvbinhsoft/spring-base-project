@@ -245,6 +245,12 @@
 					<failOnError>true</failOnError>
 					<includeFilterFile>spotbugs-security-include.xml</includeFilterFile>
 					<excludeFilterFile>spotbugs-security-exclude.xml</excludeFilterFile>
+					<jvmArgs>-Xmx512m</jvmArgs>
+					<fork>true</fork>
+					<maxHeap>1024</maxHeap>
+					<!-- Explicitly set target and source versions -->
+					<targetJdk>17</targetJdk>
+
 					<plugins>
 						<plugin>
 							<groupId>com.h3xstream.findsecbugs</groupId>
