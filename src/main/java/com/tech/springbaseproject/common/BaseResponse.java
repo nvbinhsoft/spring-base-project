@@ -4,6 +4,7 @@ import java.time.Instant;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import lombok.Getter;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.MDC;
 
 @Getter
@@ -40,5 +41,9 @@ public class BaseResponse<T> {
 
     public static <T> BaseResponse<T> success(T data) {
         return new BaseResponse<>(200, "Success", data);
+    }
+
+    public static BaseResponse<String> fail(int code, String message) {
+        return new BaseResponse<>(code, message, StringUtils.EMPTY);
     }
 }
