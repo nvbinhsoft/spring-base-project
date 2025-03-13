@@ -21,6 +21,8 @@ Closes #
 - [ ] All new and existing tests pass
 - [ ] I have updated documentation as needed
 - [ ] I have verified that no new warnings or errors are introduced
+- [ ] I have run code style checks locally (`mvn checkstyle:check`)
+- [ ] I have addressed all code quality warnings
 
 ## Screenshots
 <!-- If applicable, add screenshots to help explain the change -->
