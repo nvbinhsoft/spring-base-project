@@ -16,5 +16,4 @@ public class UserResponse {
         this.username = username;
         this.email = email;
     }
-    // getters/setters
 }
