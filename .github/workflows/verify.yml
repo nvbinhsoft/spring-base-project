@@ -70,7 +70,9 @@ jobs:
         uses: EnricoMi/publish-unit-test-result-action@v2
         if: always()
         with:
-          files: target/surefire-reports/**/*.xml
+          files: |
+            target/surefire-reports/TEST-*.xml
+          check_name: Unit Test Results
 
   integration-tests:
     name: Run Integration Tests
@@ -98,7 +100,9 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
 
       - name: Run Integration Tests with Reports
-        run: mvn clean verify surefire-report:report -P integration-tests
+        run: |
+          mvn clean verify -P integration-tests
+          mvn failsafe-report:report
 
       - name: Upload Integration Test Results
         if: always()
@@ -113,4 +117,6 @@ jobs:
         uses: EnricoMi/publish-unit-test-result-action@v2
         if: always()
         with:
-          files: target/failsafe-reports/**/*.xml
+          files: |
+            target/failsafe-reports/TEST-*.xml
+          check_name: Integration Test Results
