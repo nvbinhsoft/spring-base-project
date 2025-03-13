@@ -55,11 +55,18 @@ jobs:
       - name: Run Unit Tests
         run: mvn clean test -P unit-tests
 
-      - name: Publish Unit Test Results
-        uses: actions/upload-artifact@v4
+      - name: Generate Test Reports
+        if: always()
+        run: mvn surefire-report:report-only
+
+      - name: Publish Test Results
+        uses: dorny/test-reporter@v1
+        if: always()
         with:
-          name: unit-test-results
-          path: target/surefire-reports/
+          name: Unit Test Results
+          path: target/surefire-reports/*.xml
+          reporter: java-junit
+          fail-on-error: true
 
   integration-tests:
     name: Run Integration Tests
@@ -86,10 +93,17 @@ jobs:
       - name: Run Integration Tests
         run: mvn clean verify -P integration-tests
 
+      - name: Generate Integration Test Reports
+        if: always()
+        run: mvn failsafe-report:report-only
+
       - name: Publish Integration Test Results
-        uses: actions/upload-artifact@v4
+        uses: dorny/test-reporter@v1
+        if: always()
         with:
-          name: integration-test-results
-          path: target/failsafe-reports/
+          name: Integration Test Results
+          path: target/failsafe-reports/*.xml
+          reporter: java-junit
+          fail-on-error: true
 
 
