@@ -22,7 +22,6 @@ public class UserController extends BaseController {
     private final UserService userService;
 
     @PostMapping
-    @Version(1)
     public ResponseEntity<BaseResponse<UserResponse>> createUser(@RequestBody CreateUserRequest dto) {
         UserResponse created = userService.createUser(dto);
 
