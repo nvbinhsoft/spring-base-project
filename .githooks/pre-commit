@@ -1,0 +1,25 @@
+##!/bin/bash
+#
+#echo "Running pre-commit checks..."
+#
+## Run code quality checks
+#echo "Running CheckStyle..."
+#mvn checkstyle:check
+#
+#if [ $? -ne 0 ]; then
+#    echo "CheckStyle failed. Please fix the code style issues before committing."
+#    exit 1
+#fi
+#
+#echo "Running SpotBugs..."
+#mvn spotbugs:check
+#
+#if [ $? -ne 0 ]; then
+#    echo "SpotBugs found issues. Please fix them before committing."
+#    exit 1
+#fi
+#
+#echo "Pre-commit checks passed!"
+#exit 0
+
+# Temporary pending code quality checks
