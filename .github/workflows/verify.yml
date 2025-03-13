@@ -53,7 +53,7 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
 
       - name: Run Unit Tests
-        run: mvn clean test
+        run: mvn clean test -P unit-tests
 
       - name: Publish Unit Test Results
         uses: actions/upload-artifact@v3
@@ -84,7 +84,7 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
 
       - name: Run Integration Tests
-        run: mvn verify
+        run: mvn clean verify -P integration-tests
 
       - name: Publish Integration Test Results
         uses: actions/upload-artifact@v3
