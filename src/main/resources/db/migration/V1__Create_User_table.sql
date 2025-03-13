@@ -1,4 +1,4 @@
-CREATE TABLE User (
-                               id INT PRIMARY KEY,
-                               name VARCHAR(100) NOT NULL
+CREATE TABLE users (
+                       id INT PRIMARY KEY,
+                       name VARCHAR(100) NOT NULL
 );
