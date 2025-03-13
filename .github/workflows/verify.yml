@@ -52,10 +52,25 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
 
       - name: Run Style Checks
-        run: mvn checkstyle:check
+        run: mvn checkstyle:check -Dcheckstyle.failOnViolation=true -Dcheckstyle.failsOnError=true
 
       - name: Run SpotBugs
-        run: mvn spotbugs:check
+        run: mvn spotbugs:check -Dspotbugs.failOnError=true
+
+      - name: Generate Code Quality Reports
+        if: always()
+        run: |
+          mvn checkstyle:checkstyle
+          mvn spotbugs:spotbugs
+
+      - name: Upload Code Quality Reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: code-quality-reports
+          path: |
+            target/site/checkstyle.html
+            target/spotbugsXml.xml
 
   unit-tests:
     name: Run Unit Tests
